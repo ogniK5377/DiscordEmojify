@@ -7,10 +7,10 @@ A quick and dirty script designed to create large "emojis" from gifs. The only r
 `pip install -r requirements.txt`
 
 # Usage
-`python emojify.py <input gif path> <output gif directory> <base emoji name> <amount of "width" emojis>`
+`python emojify.py <input gif path> <output gif directory> <base emoji name> <amount of "width" emojis> [optional: amount of "height" emojis]`
 
 Example to create an 8x6 emoji block
-`python emoji.py "C:\Path\Cat.gif" "C:\Path2\Output" "cat" 8`
+`python emojify.py "C:\Path\Cat.gif" "C:\Path2\Output" "cat" 8`
 
 The height block of the emojis is calulated by `MAX_EMOJI_COUNT / WIDTH` where `MAX_EMOJI_COUNT` is 50.
 

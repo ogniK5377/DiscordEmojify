@@ -5,8 +5,8 @@ MAX_EMOJI_COUNT = 50
 EMOJI_BLOCK_SZ = 32
 
 def main(argc, argv):
-    if argc < 4:
-        print '%s <input gif> <output directory> <emoji name> <max width emojis>' % argv[0]
+    if argc < 5:
+        print '%s <input gif> <output directory> <emoji name> <max width emojis> [max height emojis]' % argv[0]
         return 1
     
     try:
@@ -14,7 +14,11 @@ def main(argc, argv):
             os.makedirs(argv[2])
         max_w = int(argv[4])
         clip = VideoFileClip(argv[1])
-        max_h = int(math.floor(MAX_EMOJI_COUNT / max_w))
+        max_h = 0
+        if argc == 6:
+            max_h = int(argv[5])
+        else:
+            max_h = int(math.floor(MAX_EMOJI_COUNT / max_w))
 
         new_w = EMOJI_BLOCK_SZ * max_w
         new_h = EMOJI_BLOCK_SZ * max_h
