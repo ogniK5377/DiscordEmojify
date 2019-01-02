@@ -37,7 +37,7 @@ def main(argc, argv):
         discord_cmd = ''
         idx = 0
         with open('%s/emoji_tester.html' % argv[2], 'wb') as fp:
-            fp.write(b'<html><head><title>Emoji tester</title></head><body>')
+            fp.write(b'<html><head><title>Emoji tester</title><meta charset="utf-8"></head><body>')
             fp.write(b'emoji testing, should look fine in discord<br>')
             for j in range(max_h):
                 fp.write(b'<br>')
