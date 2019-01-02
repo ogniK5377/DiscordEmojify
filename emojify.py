@@ -4,6 +4,12 @@ import sys, math, os, traceback, webbrowser
 MAX_EMOJI_COUNT = 50
 EMOJI_BLOCK_SZ = 32
 
+def get_user_input(inp):
+    if sys.version_info >= (3, 0):
+        return input(inp)
+    else:
+        return raw_input(inp)
+
 def main(argc, argv):
     if argc < 4:
         print('%s <input gif> <output directory> <emoji name> <max width emojis> [max height emojis]' % argv[0])
@@ -19,6 +25,9 @@ def main(argc, argv):
             max_h = int(argv[5])
             if max_h*max_w > MAX_EMOJI_COUNT:
                 print('Emojis exceed limit of %d, emoji count is %d!' % (MAX_EMOJI_COUNT, max_h*max_w))
+                option = get_user_input('Would you like to continue? (y/N): ').lower()
+                if len(option) == 0 or option[0] != 'y':
+                    return 1
         else:
             max_h = int(math.floor(MAX_EMOJI_COUNT / max_w))
 
