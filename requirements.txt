@@ -1,1 +1,12 @@
+certifi==2019.11.28
+chardet==3.0.4
+decorator==4.4.1
+idna==2.8
+imageio==2.4.1
+imageio-ffmpeg==0.3.0
 moviepy==0.2.3.5
+numpy==1.18.1
+Pillow==7.0.0
+requests==2.22.0
+tqdm==4.41.1
+urllib3==1.25.7
